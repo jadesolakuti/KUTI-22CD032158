@@ -23,7 +23,7 @@ FACE_DETECTION/
 └── templates/
      └── index.html           # front-end interface (HTML only)
 🧩 Project Execution Plan
-We’ll take this project step-by-step.
+We’ll take this project step-by-step.git 
 At each step, you will:
 
 Explain what’s happening in simple terms (assuming I'm a novice).
