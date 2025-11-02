@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Face Emotion Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 25px;
+            width: 380px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 12px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+        input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            font-size: 15px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #005fcc;
+        }
+        .message-box {
+            background: #e8f4ff;
+            padding: 10px;
+            border-left: 4px solid #007bff;
+            margin-top: 15px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 10px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Face Emotion Detection</h1>
+
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="text" name="student_name" placeholder="Enter your name" required>
+        <input type="text" name="student_id" placeholder="Enter your student ID" required>
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">Detect Emotion</button>
+    </form>
+
+    {% if message %}
+    <div class="message-box">
+        <strong>Result:</strong> {{ message }}
+    </div>
+    {% endif %}
+
+    <footer>CSC415 AI Project • Emotion Detection System</footer>
+</div>
+
+</body>
+</html>
